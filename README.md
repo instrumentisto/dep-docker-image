@@ -32,10 +32,16 @@ Dep Docker Image
 ## How to use this image
 
 Mount your project into correct `$GOPATH` directory and provide the `dep` command you require:
-
 ```bash
 docker run --rm -v $(pwd):/go/src/my/pkg/name -w /go/src/my/pkg/name \
     instrumentisto/dep ensure
+```
+
+If you want to preserve Dep caches, just mount [`/go/pkg/dep` directory][13] inside container to desired location:
+```bash
+docker run --rm -v $(pwd):/go/src/my/pkg/name -w /go/src/my/pkg/name \
+                -v $(pwd)/.caches/dep:/go/pkg/dep \ 
+    instrumentisto/dep ensure -update
 ```
 
 
@@ -91,6 +97,7 @@ If you have any problems with or questions about this image, please contact us t
 [3]: https://github.com/instrumentisto/dep-docker-image/issues
 [11]: https://github.com/golang/dep/wiki/Roadmap
 [12]: https://github.com/golang/dep#current-status
+[13]: https://github.com/golang/dep/issues/1066
 [91]: https://github.com/golang/dep/blob/master/LICENSE
 [92]: https://github.com/instrumentisto/dep-docker-image/blob/master/LICENSE.md
 [101]: https://github.com/instrumentisto/dep-docker-image/blob/master/debian/Dockerfile
