@@ -24,7 +24,7 @@ Dep Docker Image
 
 > [github.com/golang/dep](https://github.com/golang/dep)
 
-![Dep Logo](https://raw.githubusercontent.com/golang/dep/master/docs/img/DigbyShadows.png)
+<img src="https://raw.githubusercontent.com/golang/dep/master/docs/img/DigbyShadows.png" width="360">
 
 
 
