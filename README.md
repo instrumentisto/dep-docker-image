@@ -37,7 +37,7 @@ docker run --rm -v $(pwd):/go/src/my/pkg/name -w /go/src/my/pkg/name \
     instrumentisto/dep ensure
 ```
 
-If you want to preserve Dep caches, just mount [`/go/pkg/dep` directory][13] inside container to desired location:
+If you want to preserve `dep` caches, just mount [`/go/pkg/dep` directory][13] inside container to desired location:
 ```bash
 docker run --rm -v $(pwd):/go/src/my/pkg/name -w /go/src/my/pkg/name \
                 -v $(pwd)/.caches/dep:/go/pkg/dep \ 
@@ -52,17 +52,17 @@ docker run --rm -v $(pwd):/go/src/my/pkg/name -w /go/src/my/pkg/name \
 
 ### `latest`
 
-Latest version of Dep.
+Latest version of `dep`.
 
 
 ### `X.Y`
 
-Latest version of Dep `X.Y` branch.
+Latest version of `dep` `X.Y` branch.
 
 
 ### `X.Y.Z`
 
-Concrete `X.Y.Z` version of Dep.
+Concrete `X.Y.Z` version of `dep`.
 
 
 ### `alpine`
@@ -75,9 +75,9 @@ Alpine Linux is much smaller than most distribution base images (~5MB), and thus
 
 ## License
 
-Dep itself is licensed under [BSD-3-Clause license][91].
+`dep` itself is licensed under [BSD-3-Clause license][91].
 
-And Dep Docker image is licensed under [MIT license][92] too.
+And `dep` Docker image is licensed under [MIT license][92].
 
 
 
