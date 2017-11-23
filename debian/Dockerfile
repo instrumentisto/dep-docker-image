@@ -14,26 +14,17 @@ RUN apt-get update \
             git mercurial subversion bzr \
  && update-ca-certificates \
     \
- # Install build dependencies
- && buildDeps="unzip" \
- && apt-get install -y --no-install-recommends --no-install-suggests \
-            $buildDeps \
-    \
  # Download Dep executable
- && curl -fL -o /tmp/dep.zip \
-         https://github.com/golang/dep/releases/download/v0.3.0/dep-linux-amd64.zip \
- && unzip /tmp/dep.zip -d /usr/local/bin/ \
+ && curl -fL -o /usr/local/bin/dep \
+         https://github.com/golang/dep/releases/download/v0.3.1/dep-linux-amd64 \
  && chmod +x /usr/local/bin/dep \
     \
  # Install Dep license
  && mkdir -p /usr/local/share/doc/dep \
  && curl -fL -o /usr/local/share/doc/dep/LICENSE \
-         https://raw.githubusercontent.com/golang/dep/v0.3.0/LICENSE \
+         https://raw.githubusercontent.com/golang/dep/v0.3.1/LICENSE \
     \
  # Cleanup unnecessary files
- && apt-get purge -y --auto-remove \
-                  -o APT::AutoRemove::RecommendsImportant=false \
-            $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
            /tmp/*
 

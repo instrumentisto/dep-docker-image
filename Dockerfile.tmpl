@@ -27,20 +27,15 @@ RUN apt-get update \
 {{- end }}
  && update-ca-certificates \
     \
- # Install build dependencies
 {{- if hasSuffix .Env.DOCKERFILE "alpine" }}
+ # Install build dependencies
  && apk add --no-cache --virtual .build-deps \
-        curl zip \
-{{- else }}
- && buildDeps="unzip" \
- && apt-get install -y --no-install-recommends --no-install-suggests \
-            $buildDeps \
-{{- end }}
+        curl \
     \
+{{- end }}
  # Download Dep executable
- && curl -fL -o /tmp/dep.zip \
-         https://github.com/golang/dep/releases/download/v{{ .Env.VERSION }}/dep-linux-amd64.zip \
- && unzip /tmp/dep.zip -d /usr/local/bin/ \
+ && curl -fL -o /usr/local/bin/dep \
+         https://github.com/golang/dep/releases/download/v{{ .Env.VERSION }}/dep-linux-amd64 \
  && chmod +x /usr/local/bin/dep \
     \
  # Install Dep license
@@ -53,9 +48,6 @@ RUN apt-get update \
  && apk del .build-deps \
  && rm -rf /var/cache/apk/* \
 {{- else }}
- && apt-get purge -y --auto-remove \
-                  -o APT::AutoRemove::RecommendsImportant=false \
-            $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
 {{- end }}
            /tmp/*

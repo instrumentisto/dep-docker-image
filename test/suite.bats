@@ -82,7 +82,7 @@
   [ "$status" -eq 0 ]
 }
 
-#@test "Dep runs ok" {
-#  run docker run --rm $IMAGE --help
-#  [ "$status" -eq 0 ]
-#}
+@test "Dep runs ok" {
+  run docker run --rm $IMAGE version
+  [ "$status" -eq 0 ]
+}
