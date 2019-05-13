@@ -14,8 +14,8 @@
 
 IMAGE_NAME := instrumentisto/dep
 ALL_IMAGES := \
-	debian:0.5.0,0.5,latest \
-	alpine:0.5.0-alpine,0.5-alpine,alpine
+	debian:0.5.1,0.5,latest \
+	alpine:0.5.1-alpine,0.5-alpine,alpine
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
 
