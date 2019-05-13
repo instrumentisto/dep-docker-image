@@ -21,13 +21,13 @@ RUN apk update \
     \
  # Download Dep executable
  && curl -fL -o /usr/local/bin/dep \
-         https://github.com/golang/dep/releases/download/v0.5.1/dep-linux-amd64 \
+         https://github.com/golang/dep/releases/download/0.5.2/dep-linux-amd64 \
  && chmod +x /usr/local/bin/dep \
     \
  # Install Dep license
  && mkdir -p /usr/local/share/doc/dep \
  && curl -fL -o /usr/local/share/doc/dep/LICENSE \
-         https://raw.githubusercontent.com/golang/dep/v0.5.1/LICENSE \
+         https://raw.githubusercontent.com/golang/dep/0.5.2/LICENSE \
     \
  # Cleanup unnecessary files
  && apk del .build-deps \
