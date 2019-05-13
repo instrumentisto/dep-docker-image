@@ -3,9 +3,9 @@
 
 # https://hub.docker.com/_/golang
 {{ if hasSuffix .Env.DOCKERFILE "alpine" -}}
-FROM golang:1.10-alpine
+FROM golang:1.12-alpine
 {{- else -}}
-FROM golang:1.10-stretch
+FROM golang:1.12-stretch
 {{- end }}
 
 MAINTAINER Instrumentisto Team <developer@instrumentisto.com>
