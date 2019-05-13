@@ -35,13 +35,13 @@ RUN apt-get update \
 {{- end }}
  # Download Dep executable
  && curl -fL -o /usr/local/bin/dep \
-         https://github.com/golang/dep/releases/download/{{ .Env.VERSION }}/dep-linux-amd64 \
+         https://github.com/golang/dep/releases/download/v{{ .Env.VERSION }}/dep-linux-amd64 \
  && chmod +x /usr/local/bin/dep \
     \
  # Install Dep license
  && mkdir -p /usr/local/share/doc/dep \
  && curl -fL -o /usr/local/share/doc/dep/LICENSE \
-         https://raw.githubusercontent.com/golang/dep/{{ .Env.VERSION }}/LICENSE \
+         https://raw.githubusercontent.com/golang/dep/v{{ .Env.VERSION }}/LICENSE \
     \
  # Cleanup unnecessary files
 {{- if hasSuffix .Env.DOCKERFILE "alpine" }}
