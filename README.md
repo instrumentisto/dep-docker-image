@@ -8,8 +8,8 @@ Dep Docker Image
 
 ## Supported tags and respective `Dockerfile` links
 
-- `0.5.3`, `0.5`, `latest` [(debian/Dockerfile)][101]
-- `0.5.3-alpine`, `0.5-alpine`, `alpine` [(alpine/Dockerfile)][102]
+- `0.5.4`, `0.5`, `latest` [(debian/Dockerfile)][101]
+- `0.5.4-alpine`, `0.5-alpine`, `alpine` [(alpine/Dockerfile)][102]
 
 
 
