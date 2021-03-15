@@ -6,6 +6,15 @@ Dep Docker Image
 
 
 
+## Status
+
+__PROJECT IS CLOSED AND ARCHIVED. NO MAINTAINING WILL BE CONTINUED.__
+
+Consider to use [Go modules](https://blog.golang.org/using-go-modules) instead.
+
+
+
+
 ## Supported tags and respective `Dockerfile` links
 
 - `0.5.4`, `0.5`, `latest` [(debian/Dockerfile)][101]
